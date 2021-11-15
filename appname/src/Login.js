@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+//import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.js"
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error] = useAuthState(getAuth);
+  const [error, setError] = useState("");
+ // const [error] = useAuthState(getAuth);
   const history = useNavigate();
 
-  const auth = getAuth();
+  //const auth = getAuth();
 
   const signIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
+      .then(() => {
+        console.log("Sí jalo")
+        history('/dashboard');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        console.log("No jalo")
+        setError('Contraseña y/o correo inválidos');
+        console.log(error,setError);
       });
   };
   /*     useEffect(() => {
@@ -31,7 +36,7 @@ function Login() {
   return (
     <main className="login">
       <form className="login__container">
-        <label for="email">Email</label>
+        <label >Email</label>
         <input
           id="email"
           type="email"
@@ -40,7 +45,7 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Escribe tu correo"
         />
-        <label for="password">Contraseña</label>
+        <label >Contraseña</label>
         <input
           id="password"
           type="password"
@@ -49,12 +54,14 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Escribe tu contraseña"
         />
+        <Link to="/dashboard">
         <button
           className="login__btn"
           onClick={() => signIn(email, password)}
         >
           Acceder
         </button>
+        </Link>
       </form>
     </main>
   );

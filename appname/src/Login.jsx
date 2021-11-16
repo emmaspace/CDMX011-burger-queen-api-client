@@ -122,6 +122,7 @@ function Login() {
       <section className="login">
         <h2>Inicio</h2>
         <form className="login__container">
+          <section className="identifiers">
           <label>Email</label>
           <input
             id="email"
@@ -131,6 +132,8 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Escribe tu correo"
           />
+          </section>
+          <section className="identifiers">
           <label>Contraseña</label>
           <input
             id="password"
@@ -140,6 +143,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Escribe tu contraseña"
           />
+          </section>
           {/* <Link to="/dashboard"> */}
           <button
             className="login__btn"

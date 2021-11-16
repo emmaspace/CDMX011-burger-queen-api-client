@@ -70,7 +70,7 @@ aside,
   padding: 4em 3em;
 }
 
-.login form button {
+.login form button { 
   background: #f6511d;
   border: 1px solid rgba(128, 45, 16, 0.27);
   box-sizing: border-box;
@@ -78,8 +78,42 @@ aside,
   border-radius: 0.7em;
   color: white;
   padding:0.5em 2em;
-  max-width: 75%;
-  margin: 0 auto;
+  /*max-width: 75%;
+  margin: 2rem auto;*/
   font-size: 1.3em;
   font-family: "Ropa Sans", sans-serif;
+}
+input[type="email" i], [type="password" i] {
+    width: 320px;
+    height: 47px;
+    left: 766px;
+    top: 471px;
+    background: #FFFFFF;
+    border: 1px solid rgba(128, 45, 16, 0.26);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgb(128 45 16 / 30%);
+    border-radius: 7px;
+    padding: 0 .5rem;
+}
+
+.identifiers {
+  margin-bottom: 1.5rem;
+}
+
+.identifiers input{
+  color: #8D8D8D;
+}
+
+.identifiers label {
+    font-family: Ropa Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 32px;
+    color: #802D10;
+}
+
+
+.login__button{
+  width: 100%;
 }

@@ -1,11 +1,14 @@
-// import React, { useEffect, useState } from "react";
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import { useHistory } from "react-router";
-// import "./Dashboard.css";
-// import { auth, db, logout } from "./firebase";
+//import React, { useEffect, useState } from "react";
+import React from 'react';
 
-function Dashboard() {
-    return(<h1>A ver...</h1>)
-}
+import "./Dashboard.css";
+//import { auth, db, logout } from "./firebase";
 
-export default Dashboard;
+export default function Dashboard (email, password) {
+    return( 
+    <div> 
+        <h1>A ver...</h1>
+    </div>
+    )
+}  
+

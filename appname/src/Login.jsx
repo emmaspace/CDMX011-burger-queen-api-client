@@ -19,7 +19,7 @@ function Login() {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         console.log("Sí jalo");
-        history("/dashboard");
+        history("dashboard");
       })
       .catch(() => {
         console.log("No jalo");

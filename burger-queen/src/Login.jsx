@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import { LoginForm } from "./LoginForm";
+//import { LoginForm } from "./LoginForm";
+import { AuthFirebase } from "./LoginAuth";
 import "./Login.css";
 
 function Login() {
@@ -89,7 +90,7 @@ function Login() {
           </svg>
           <h1>Burger Queen</h1>
         </aside>
-        <LoginForm></LoginForm>
+        <AuthFirebase></AuthFirebase>
       </main>
 
     </Fragment>

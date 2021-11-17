@@ -4,7 +4,6 @@ import Dashboard from "./Dashboard.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-  console.log("pero que rayos paasa aki aaaaaa");
   return (
     <div className="App">
       <Router>

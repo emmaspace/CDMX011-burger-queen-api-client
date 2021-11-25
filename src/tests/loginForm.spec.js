@@ -49,6 +49,7 @@ describe("Input should be rendered", () => {
     })
 
     fireEvent.change(password, {
+      
       target: { value: '123456' }
     })
 

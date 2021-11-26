@@ -3,7 +3,7 @@ import React from 'react';
 import "./Dashboard.css";
 import { signOut, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-//import { auth } from "./firebase";
+
 export default function Dashboard (email, password) {
     const navigate = useNavigate();
     const auth = getAuth();

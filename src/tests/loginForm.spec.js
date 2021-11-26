@@ -7,7 +7,6 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { LoginForm } from "../LoginForm";
 
-// const handleClick = jest.fn();
 const saveData = jest.fn();
 
 describe("Login should render", () => {
@@ -38,11 +37,10 @@ describe("Input should be rendered", () => {
 
 
   test("renders Input component", () => {
-    render(<LoginForm />);
+    render(<LoginForm saveData={saveData} />);
     const inputEmail = screen.getByPlaceholderText('Escribe tu correo');
     const password = screen.getByPlaceholderText('Escribe tu contraseña');
     const submitButton = screen.getByRole('button', { name: /Acceder/i });
-    const button
     
     fireEvent.change(inputEmail, {
       target: { value: 'waiter@bq.com' }
@@ -55,21 +53,7 @@ describe("Input should be rendered", () => {
 
     expect(saveData).not.toHaveBeenCalled();
 
-    const e = { stopPropagation: jest.fn() };
-    //fireEvent.onClick(submitButton);
-    /* submitButton.simulate('click', {
-      preventDefault: () => {
-      }
-     }); */
-     const clickEvent = new MouseEvent('click');
-     Object.assign(clickEvent, {preventDefault: jest.fn()});
-   
-     fireEvent(submitButton, clickEvent);
-     console.log('que aki que')
-   
-     expect(clickEvent.preventDefault).toBeInTheDocument()
-
-    //expect(saveData).toBeInTheDocument();
+    fireEvent.click(submitButton);
 
     expect(saveData).toHaveBeenCalledWith('waiter@bq.com', '123456');
   })

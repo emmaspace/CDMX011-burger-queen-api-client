@@ -1,7 +1,7 @@
 import React, { useState,  Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import auth from "./firebase.jsx";
+import auth from "../../firebase";
 import "./Login.css";
 import { LoginForm } from "./LoginForm";
 //comment

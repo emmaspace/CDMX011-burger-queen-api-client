@@ -1,19 +1,100 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "products":[
+        {
+            "id": 0,
+            "name": "Café americano",
+            "price": 5,
+            "image": "",
+            "type": "Desayuno",
+            "dataEntry": ""
+        },
+        {
+            "id": 1,
+            "name": "Café con leche",
+            "price": 7,
+            "image": "",
+            "type": "Desayuno",
+            "dataEntry": ""
+        },
+        {
+            "id": 2,
+            "name": "Sandwich de jamón y queso",
+            "price": 10,
+            "image": "",
+            "type": "Desayuno",
+            "dataEntry": ""
+        },
+        {
+            "id": 3,
+            "name": "Jugo de frutas natural",
+            "price": 7,
+            "image": "",
+            "type": "Desayuno",
+            "dataEntry": ""
+        },
+        {
+            "id": 4,
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 5,
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 6,
+            "name": "Papas fritas",
+            "price": 5,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 7,
+            "name": "Aros de cebolla",
+            "price": 5,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 8,
+            "name": "Agua 500ml",
+            "price": 5,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 9,
+            "name": "Agua 750ml",
+            "price": 7,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 10,
+            "name": "Bebida/gaseosa 500ml",
+            "price": 7,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        },
+        {
+            "id": 11,
+            "name": "Bebida/gaseosa 750ml",
+            "price": 10,
+            "image": "",
+            "type": "Comida",
+            "dataEntry": ""
+        }
+    ]
 }

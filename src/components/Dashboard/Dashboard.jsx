@@ -1,4 +1,4 @@
-import "./Dashboard.css";
+import "./Dashboard.scss";
 import { useNavigate } from "react-router-dom";
 import Breakfast from "./Breakfast";
 import Lunch from "./Lunch"

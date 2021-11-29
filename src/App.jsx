@@ -1,6 +1,7 @@
 import "./App.css";
-import Login from "./Login.jsx";
-import Dashboard from "./Dashboard.jsx";
+import Login from "./components/Login/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Header from "./components/Dashboard/Header"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/header" element={<Header />} />
         </Routes>
       </Router>
     </div>

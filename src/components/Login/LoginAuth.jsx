@@ -1,7 +1,7 @@
 import React, { useState,  Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import auth from "./firebase.jsx";
+import auth from "../../firebase";
 import "./Login.css";
 import { LoginForm } from "./LoginForm";
 //comment
@@ -13,7 +13,7 @@ export function AuthFirebase(email, password) {
   const signIn = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      history("dashboard");
+      history("header");
     } catch {
       setError("Contraseña y/o correo inválidos")
     }

@@ -1,12 +1,12 @@
-import "./Dashboard.css";
+import "./Dashboard.scss";
 import { signOut, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Dashboard from "./Dashboard";
 
 
-export default function Header() {
-  const [menu, setMenu] = useState("breakfast");
+export default function Header({setMenu}) {
+  
   
   /* const renderBreakfast = () => {
    return  setBreakfast === 'breakfast' ? 'lunch' : 'breakfast';
@@ -36,7 +36,6 @@ export default function Header() {
           <img src="#" alt="Ícono de puerta" />
         </button>
       </nav>
-      <Dashboard menu={menu}/>
     </div>
   );
 }

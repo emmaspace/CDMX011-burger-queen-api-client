@@ -13,7 +13,7 @@ export function AuthFirebase(email, password) {
   const signIn = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      history("header");
+      history("dashboard");
     } catch {
       setError("Contraseña y/o correo inválidos")
     }

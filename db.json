@@ -36,7 +36,7 @@
             "id": 4,
             "name": "Hamburguesa simple",
             "price": 10,
-            "image": "",
+            "image": "https://ibb.co/27GQGqq",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -44,7 +44,7 @@
             "id": 5,
             "name": "Hamburguesa doble",
             "price": 15,
-            "image": "",
+            "image": "https://ibb.co/fvZZL3F",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -52,7 +52,7 @@
             "id": 6,
             "name": "Papas fritas",
             "price": 5,
-            "image": "",
+            "image": "https://ibb.co/n1VHtCr",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -60,7 +60,7 @@
             "id": 7,
             "name": "Aros de cebolla",
             "price": 5,
-            "image": "",
+            "image": "https://ibb.co/fM0sxXb",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -68,7 +68,7 @@
             "id": 8,
             "name": "Agua 500ml",
             "price": 5,
-            "image": "",
+            "image": "https://ibb.co/YctXrzd",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -76,7 +76,7 @@
             "id": 9,
             "name": "Agua 750ml",
             "price": 7,
-            "image": "",
+            "image": "https://ibb.co/YctXrzd",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -84,7 +84,7 @@
             "id": 10,
             "name": "Bebida/gaseosa 500ml",
             "price": 7,
-            "image": "",
+            "image": "https://ibb.co/31zbhqx",
             "type": "Comida",
             "dataEntry": ""
         },
@@ -92,7 +92,7 @@
             "id": 11,
             "name": "Bebida/gaseosa 750ml",
             "price": 10,
-            "image": "",
+            "image": "https://ibb.co/31zbhqx",
             "type": "Comida",
             "dataEntry": ""
         }

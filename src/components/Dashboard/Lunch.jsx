@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
 
-export default function Breakfast() {
+export default function Breakfast({ addProduct }) {
   let [products, setProducts] = useState();
   const getData = async () => {
     const url =
@@ -16,7 +16,10 @@ export default function Breakfast() {
   }, []);
   return (
     <div>
-      {products && products.map((product) => <Item product={product} />)}
+         {products &&
+          products.map((product) => (
+          <Item product={product} addProduct={addProduct} />
+        ))}
     </div>
   );
 }

@@ -4,9 +4,9 @@
             "id": 0,
             "name": "Café americano",
             "price": 5,
-            "image": "",
+            "image": "https://i.ibb.co/FYHYGqp/Cafecito.png",
             "type": "Desayuno",
-            "dataEntry": "https://i.ibb.co/FYHYGqp/Cafecito.png"
+            "dataEntry": ""
         },
         {
             "id": 1,

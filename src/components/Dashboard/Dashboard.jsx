@@ -1,11 +1,10 @@
-import "./Dashboard.scss";
-// import { useNavigate } from "react-router-dom";
-import Breakfast from "./Breakfast";
-import Lunch from "./Lunch";
-import Comanda from "./Commander";
+import "./Styles/Dashboard.scss";
+import Breakfast from "./Menu/Breakfast";
+import Lunch from "./Menu/Lunch";
+import Comanda from "./Comanda/Comanda";
 import React, { useState } from "react";
-import Header from "./Header";
-import Item from "./Item";
+import Header from "./Header/Header";
+import Item from "./Menu/Item/Item";
 //import "../../style.scss";
 
 export default function Dashboard() {
@@ -18,7 +17,7 @@ export default function Dashboard() {
       setOrderProduct(
         orderProduct.map((elem) =>
           elem.id === product.id
-            ? { ...exists, amount: exists.amount + 1 }
+            ? { ...exists,  amount: 1 }
             : elem
         )
       );
@@ -26,8 +25,29 @@ export default function Dashboard() {
       setOrderProduct([...orderProduct, { ...product, amount: 1 }]);
     }
   };
+  const addition = (product) => {
+    const exists = orderProduct.find((elem) => elem.id === product.id);
+    console.log(exists)
+    if(exists) {
+      setOrderProduct(orderProduct.map(elem => elem.id === product.id ?
+        {...exists, amount: exists.amount + 1} : elem) 
+      );
+    } else {
+      setOrderProduct([...orderProduct, { ...product, amount: 1}])
+    }
+  }
+    
 
-  const deleteComanda = (product) => {
+  const substract = (product) => {
+    // const exists = orderProduct.find((elem) => elem.id === product.id);
+    // return exists.amount >= 1 ? 
+    // console.log(exists)
+    setOrderProduct(orderProduct.filter((elem) => {
+      return elem.amount > 1 && elem.id === product.id ? elem.amount-- : deleteProduct(elem);
+    }))
+  }
+
+  const deleteComanda = () => {
     setOrderProduct([]);
   }
   
@@ -48,7 +68,6 @@ export default function Dashboard() {
         {menu === "breakfast" ? (
           <Breakfast addProduct={addProduct} />
         ) : null}
-        {console.log({ Item }, "que pasa aca")}
       </section>
 
       <section /* htmlId="Lunch" */>
@@ -57,7 +76,7 @@ export default function Dashboard() {
         ) : null}
       </section>
       <section className="comanda__section" /* htmlId="Comanda" */>
-        <Comanda orderProduct={orderProduct} deleteComanda={deleteComanda} deleteProduct={deleteProduct}/>
+        <Comanda orderProduct={orderProduct} deleteComanda={deleteComanda} deleteProduct={deleteProduct} substract={substract} addition={addition}/>
       </section>
     </div>
   );

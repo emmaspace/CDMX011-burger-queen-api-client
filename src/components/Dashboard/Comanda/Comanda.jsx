@@ -1,18 +1,20 @@
-import "./Commander.scss";
+import "../Styles/Comanda.scss";
 // import Breakfast from "./Breakfast";
 // import Lunch from "./Lunch";
-import CommanderItem from "./CommanderItem";
+import ComandaItem from "./ComandaItem";
 import React /* , { useState } */ from "react";
 // import Header from "./Header";
 
-export default function Commander({
+export default function Comanda({
   orderProduct,
   deleteComanda,
   deleteProduct,
+  substract,
+  addition
 }) {
   return (
-    <div className="commander__head">
-      <section className="commander__client">
+    <div className="Comanda__head">
+      <section className="Comanda__client">
         <input
           htmlId="client"
           type="text"
@@ -26,20 +28,22 @@ export default function Commander({
           />
         </button>
       </section>
-      <section className="commander__orders">
+      <section className="Comanda__orders">
         <div className="commanda__card">
           <div className="commanda__left">
             <p> </p>
             {orderProduct.map((item) => (
-              <CommanderItem
+              <ComandaItem
                 key={item.id}
                 item={item}
                 deleteProduct={deleteProduct}
+                substract={substract}
+                addition={addition}
               />
             ))}
             <p> </p>
           </div>
-          <div className="commanda__rigth"></div>
+          <div className="commanda__right"></div>
         </div>
       </section>
       <section className="commanda__total">

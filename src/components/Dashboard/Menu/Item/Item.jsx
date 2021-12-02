@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-import "./Item.scss"
+import "../../Styles/Item.scss"
 
 export default function Item({ product, addProduct }) {
-  console.log(product)
   return (
     <div className="product__container" onClick={() => addProduct(product)}>
       {product && (

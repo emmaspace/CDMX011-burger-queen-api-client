@@ -1,4 +1,4 @@
-import "./Header.scss";
+import "../Styles/Header.scss";
 import { signOut, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import React /* , { useState } */ from "react";

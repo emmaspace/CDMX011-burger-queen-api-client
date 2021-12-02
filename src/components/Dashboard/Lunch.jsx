@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
+import "./Menu.scss";
 
 export default function Breakfast({ addProduct }) {
   let [products, setProducts] = useState();
@@ -15,7 +16,7 @@ export default function Breakfast({ addProduct }) {
     getData();
   }, []);
   return (
-    <div>
+    <div className="menu">
          {products &&
           products.map((product) => (
           <Item product={product} addProduct={addProduct} />

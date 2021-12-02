@@ -1,39 +1,45 @@
-import "./Dashboard.scss";
+import "./Commander.scss";
 // import Breakfast from "./Breakfast";
 // import Lunch from "./Lunch";
-import CommanderItem from "./CommanderItem"
+import CommanderItem from "./CommanderItem";
 import React /* , { useState } */ from "react";
 // import Header from "./Header";
 
-export default function Commander({ orderProduct, deleteComanda, deleteProduct }) {
+export default function Commander({
+  orderProduct,
+  deleteComanda,
+  deleteProduct,
+}) {
   return (
     <div className="commander__head">
       <section className="commander__client">
-        <h2>Comanda</h2>
-        <label htmlFor="client"> Cliente </label>
         <input
           htmlId="client"
           type="text"
           className="client__input"
           placeholder="Nombre del cliente"
         ></input>
-        <button className="btn__delit" onClick={deleteComanda}></button>
+        <button className="c_deleteBtn" onClick={deleteComanda}>
+          <img
+            src="https://i.ibb.co/m5FfTjB/Trash-Can.png"
+            alt="deja mi basura empaz"
+          />
+        </button>
       </section>
       <section className="commander__orders">
-        {/*   opción 1 de implementación */}
         <div className="commanda__card">
           <div className="commanda__left">
-            <p> Producto </p>
+            <p> </p>
             {orderProduct.map((item) => (
-              < CommanderItem key={item.id} item={item} deleteProduct={deleteProduct}/>
+              <CommanderItem
+                key={item.id}
+                item={item}
+                deleteProduct={deleteProduct}
+              />
             ))}
-            <p> Precio </p>
+            <p> </p>
           </div>
-          <div className="commanda__rigth">
-            <button className="c_deleteBtn" onClick={deleteComanda}>
-              x
-            </button>
-          </div>
+          <div className="commanda__rigth"></div>
         </div>
       </section>
       <section className="commanda__total">

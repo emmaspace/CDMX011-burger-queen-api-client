@@ -1,0 +1,21 @@
+.product__card {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10%;
+}
+
+.product__cardBtn {
+    color: red;
+    width: 10%;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+}
+
+.product__name{
+    width: 80%;
+}
+
+.product__price{
+
+}

@@ -6,6 +6,7 @@ import Comanda from "./Commander";
 import React, { useState } from "react";
 import Header from "./Header";
 import Item from "./Item";
+//import "../../style.scss";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState("breakfast");
@@ -38,7 +39,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
+    <div className="dashboard">
       <section /* htmlID="Header" */>
         {" "}
         <Header setMenu={setMenu} />
@@ -55,7 +56,7 @@ export default function Dashboard() {
           <Lunch addProduct={addProduct} />
         ) : null}
       </section>
-      <section /* htmlId="Comanda" */>
+      <section className="comanda__section" /* htmlId="Comanda" */>
         <Comanda orderProduct={orderProduct} deleteComanda={deleteComanda} deleteProduct={deleteProduct}/>
       </section>
     </div>

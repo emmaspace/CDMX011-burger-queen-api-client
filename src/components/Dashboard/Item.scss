@@ -1,0 +1,28 @@
+//@import url('../../style.scss') (screen);
+
+.product__container {
+  border: 5px solid #fa7d09;
+  border-radius: 3em;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 16vw;
+//   height: 16vw;
+
+  img {
+    max-width: 5em;
+    max-height: 5em;
+    margin: 1em 2em;
+  }
+
+  .product__info {
+    background: #f2bc2f;
+    border-radius: 0 0 2.6em 2.6em;
+    padding: 1em;
+    text-align: center;
+
+    p{
+        margin-top: 0.5em;
+    }
+
+  }
+}

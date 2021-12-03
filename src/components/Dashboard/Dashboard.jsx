@@ -1,15 +1,16 @@
-import "./Dashboard.scss";
-// import { useNavigate } from "react-router-dom";
-import Breakfast from "./Breakfast";
-import Lunch from "./Lunch";
-import Comanda from "./Commander";
+import "./Styles/Dashboard.scss";
+import Breakfast from "./Menu/Breakfast";
+import Lunch from "./Menu/Lunch";
+import Comanda from "./Comanda/Comanda";
 import React, { useState } from "react";
-import Header from "./Header";
-import Item from "./Item";
+import Header from "./Header/Header";
+import Item from "./Menu/Item/Item";
+//import "../../style.scss";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState("breakfast");
   const [orderProduct, setOrderProduct] = useState([]);
+  const [client, setClient] = useState("");
   
   const addProduct = (product) => {
     const exists = orderProduct.find((elem) => elem.id === product.id);
@@ -17,7 +18,7 @@ export default function Dashboard() {
       setOrderProduct(
         orderProduct.map((elem) =>
           elem.id === product.id
-            ? { ...exists, amount: exists.amount + 1 }
+            ? { ...exists,  amount: 1 }
             : elem
         )
       );
@@ -25,9 +26,38 @@ export default function Dashboard() {
       setOrderProduct([...orderProduct, { ...product, amount: 1 }]);
     }
   };
+  const addition = (product) => {
+    const exists = orderProduct.find((elem) => elem.id === product.id);
+    console.log(exists)
+    if(exists) {
+      setOrderProduct(orderProduct.map(elem => elem.id === product.id ?
+        {...exists, amount: exists.amount + 1} : elem) 
+      );
+    } else {
+      setOrderProduct([...orderProduct, { ...product, amount: 1}])
+    }
+  }
+    
+  const substract = (product) => {
+    console.log(product)
+    const exists = orderProduct.find((elem) => elem.id === product.id);
+    // console.log(exists)
+    if (exists.amount === 1) {
+      deleteProduct(product);
+    } else if (exists) {
+      setOrderProduct(
+        orderProduct.map((elem) =>
+          elem.id === product.id
+            ? { ...exists, amount: exists.amount - 1 }
+            : elem
+        )
+      );
+    }
+  }
 
-  const deleteComanda = (product) => {
+  const deleteComanda = () => {
     setOrderProduct([]);
+    setClient([])
   }
   
   const deleteProduct = (product) => {
@@ -38,7 +68,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
+    <div className="dashboard">
       <section /* htmlID="Header" */>
         {" "}
         <Header setMenu={setMenu} />
@@ -47,7 +77,6 @@ export default function Dashboard() {
         {menu === "breakfast" ? (
           <Breakfast addProduct={addProduct} />
         ) : null}
-        {console.log({ Item }, "que pasa aca")}
       </section>
 
       <section /* htmlId="Lunch" */>
@@ -55,8 +84,8 @@ export default function Dashboard() {
           <Lunch addProduct={addProduct} />
         ) : null}
       </section>
-      <section /* htmlId="Comanda" */>
-        <Comanda orderProduct={orderProduct} deleteComanda={deleteComanda} deleteProduct={deleteProduct}/>
+      <section className="comanda__section" /* htmlId="Comanda" */>
+        <Comanda client={client} setClient={setClient} orderProduct={orderProduct} deleteComanda={deleteComanda} deleteProduct={deleteProduct} substract={substract} addition={addition}/>
       </section>
     </div>
   );

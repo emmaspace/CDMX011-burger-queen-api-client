@@ -2,7 +2,7 @@ import "../Styles/Comanda.scss";
 // import Breakfast from "./Breakfast";
 // import Lunch from "./Lunch";
 import ComandaItem from "./ComandaItem";
-import React /* , { useState } */ from "react";
+import React /*{ useState }*/ from "react";
 // import Header from "./Header";
 
 export default function Comanda({
@@ -10,8 +10,18 @@ export default function Comanda({
   deleteComanda,
   deleteProduct,
   substract,
-  addition
+  addition,
+  client,
+  setClient,
 }) {
+
+  const grossPrice = orderProduct.reduce(
+    (x, item) => x + item.price * item.amount, 0)
+  console.log(grossPrice);
+
+  const taxPrice = (grossPrice * 0.16)
+
+  const total = (taxPrice + grossPrice)
   return (
     <div className="Comanda__head">
       <section className="Comanda__client">
@@ -20,7 +30,10 @@ export default function Comanda({
           type="text"
           className="client__input"
           placeholder="Nombre del cliente"
+          onChange={(e) => setClient(e.target.value)}
+          value={client}
         ></input>
+
         <button className="c_deleteBtn" onClick={deleteComanda}>
           <img
             src="https://i.ibb.co/m5FfTjB/Trash-Can.png"
@@ -39,17 +52,20 @@ export default function Comanda({
                 deleteProduct={deleteProduct}
                 substract={substract}
                 addition={addition}
+                setClient={setClient}
               />
             ))}
-            <p> </p>
           </div>
           <div className="commanda__right"></div>
         </div>
       </section>
       <section className="commanda__total">
         <h3>Subtotal</h3>
+        <p>${grossPrice.toFixed(2)}</p>
         <h3>IVA</h3>
+        <p>${taxPrice.toFixed(2)}</p>
         <h2>Total</h2>
+        <p>${total.toFixed(2)}</p>
       </section>
     </div>
   );

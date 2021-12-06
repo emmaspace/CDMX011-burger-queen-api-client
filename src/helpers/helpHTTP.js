@@ -29,19 +29,22 @@ export const helpHTTP = () => {
       .catch((error) => error);
   };
 
-  const get = (url, options={}) => customFetch(url, options);
+  const get = (url, options = {}) => customFetch(url, options);
 
-  const post = (url, options={}) => {
-    options.method ="POST"
-    return customFetch(url, options)};
+  const post = (url, options = {}) => {
+    options.method = "POST";
+    return customFetch(url, options);
+  };
 
-  const put = (url, options={}) => {
-    options.method = "PUT"
-    return customFetch(url, options)};
+  const put = (url, options = {}) => {
+    options.method = "PUT";
+    return customFetch(url, options);
+  };
 
-  const delit = (url, options={}) => {
-    options.method = "DELETE"
-    return customFetch(url, options)};
+  const delit = (url, options = {}) => {
+    options.method = "DELETE";
+    return customFetch(url, options);
+  };
 
   return {
     get,

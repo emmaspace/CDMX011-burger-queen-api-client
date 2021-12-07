@@ -3,100 +3,100 @@ import { helpHTTP } from "../helpers/helpHTTP";
 
 const CrudContext = createContext();
 
-const CrudProvider = () => {
-    const [db, setDb] = useState(null);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(null);
-    
-    let api = helpHTTP();
-    let orders = "http://localhost:5000/orders";
-    
-    useEffect(() => {
-        setLoading(true);
-        helpHTTP()
-        .get(orders)
-        .then((res) => {
-            if(!res.err) {
-                setDb(res);
-                setError(null);
-            } else {
-                setDb(null);
-                setError(res);
-            }
-            setLoading(false);
-        });
-    }, [orders]);
+const CrudProvider = ({ children }) => {
+  const [db, setDb] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
 
-    const createData = (data) => {
-        data.id = Date.now();
-        
-        let options = {
-            body: data,
-            headers: { "content-type": "application/json" },
-        };
-        
-        api.post(orders, options).then((res) => {
-            if (!res.err) {
-                setDb([...db, res]);
-            } else {
-                setError(res);
-            }
-        });
-    };
+  let api = helpHTTP();
+  let orders = "http://localhost:5000/orders";
 
-    const updateData = (data) => {
-        let endpoint = `${orders}/${data.id}`;
-
-        let options = {
-            body: data,
-            headers: {"content-type": "application/json"},
-        };
-
-        api.put(endpoint, options).then((res) => {
-            if (!res.err) {
-                let newData = db.map((order) => (order.id === data.id ? data : order));
-                setDb(newData);
-            } else {
-                setError(res);
-            }
-        });
-    };
-
-    const deleteData = (id) => {
-        let deleteOrder = window.confirm('Are you sure you want to delete?');
-        if(deleteOrder) {
-            let endpoint = `${orders}/${id}`;
-            let options = {
-                headers: { "content-type": "application/json" },
-            };
-
-            api.delit(endpoint, options).then((res) => {
-                if(!res.err) {
-                    let newData = db.filter((el) => el.id !== id);
-                    setDb(newData); 
-                } else {
-                    setError(res);
-                }
-            });    
+  useEffect(() => {
+    setLoading(true);
+    helpHTTP()
+      .get(orders)
+      .then((res) => {
+        if (!res.err) {
+          setDb(res);
+          // console.log(db);
+          setError(null);
         } else {
-            return;
+          setDb(null);
+          setError(res);
         }
+        setLoading(false);
+      });
+  }, [orders]);
+
+  const createData = (order) => {
+    order.dateEntry = Date.now();
+
+    let options = {
+      body: order,
+      headers: { "content-type": "application/json" },
+    };
+
+    api.post(orders, options).then((res) => {
+      if (!res.err) {
+        setDb([]);
+      } else {
+        setError(res);
+      }
+    });
+  };
+
+  const updateData = (data) => {
+    let endpoint = `${orders}/${data.id}`;
+
+    let options = {
+      body: data,
+      headers: { "content-type": "application/json" },
+    };
+
+    api.put(endpoint, options).then((res) => {
+      if (!res.err) {
+        let newData = db.map((order) => (order.id === data.id ? data : order));
+        setDb(newData);
+      } else {
+        setError(res);
+      }
+    });
+  };
+
+  const deleteData = (id) => {
+    let deleteOrder = window.confirm("Are you sure you want to delete?");
+    if (deleteOrder) {
+      let endpoint = `${orders}/${id}`;
+      let options = {
+        headers: { "content-type": "application/json" },
+      };
+
+      api.delit(endpoint, options).then((res) => {
+        if (!res.err) {
+          let newData = db.filter((el) => el.id !== id);
+          setDb(newData);
+        } else {
+          setError(res);
+        }
+      });
+    } else {
+      return;
     }
+  };
 
-
-const data = {
+  const data = {
     db,
     error,
-    loading, 
-    createData, 
+    loading,
+    createData,
     //dataToEdit,
-   // setDataToEdit, 
+    // setDataToEdit,
     updateData,
     deleteData,
-}
+  };
 
-    return <CrudContext.Provider value={data}></CrudContext.Provider>   
-    };
+  return <CrudContext.Provider value={data}>{children}</CrudContext.Provider>;
+};
 
-    export { CrudProvider };
-    export default CrudContext;
+export { CrudProvider };
+export default CrudContext;

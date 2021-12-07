@@ -1,101 +1,103 @@
 {
-    "products":[
-        {
-            "id": 0,
-            "name": "Café americano",
-            "price": 5,
-            "image": "https://i.ibb.co/FYHYGqp/Cafecito.png",
-            "type": "Desayuno",
-            "dataEntry": ""
-        },
-        {
-            "id": 1,
-            "name": "Café con leche",
-            "price": 7,
-            "image": "https://i.ibb.co/ynwN49M/hot-drink-1-1.png",
-            "type": "Desayuno",
-            "dataEntry": ""
-        },
-        {
-            "id": 2,
-            "name": "Sandwich de jamón y queso",
-            "price": 10,
-            "image": "https://i.ibb.co/ZfbZ38r/Sangu-ichito.png",
-            "type": "Desayuno",
-            "dataEntry": ""
-        },
-        {
-            "id": 3,
-            "name": "Jugo de frutas natural",
-            "price": 7,
-            "image": "https://i.ibb.co/7y7QwNp/Juguito.png",
-            "type": "Desayuno",
-            "dataEntry": ""
-        },
-        {
-            "id": 4,
-            "name": "Hamburguesa simple",
-            "price": 10,
-            "image": "https://i.ibb.co/bg1b5t2/hamburger-3.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 5,
-            "name": "Hamburguesa doble",
-            "price": 15,
-            "image": "https://i.ibb.co/MpHL6F7/hamburger-4.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 6,
-            "name": "Papas fritas",
-            "price": 5,
-            "image": "https://i.ibb.co/bdrp7gx/french-fries.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 7,
-            "name": "Aros de cebolla",
-            "price": 5,
-            "image": "https://i.ibb.co/qrnZdKB/image-1.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 8,
-            "name": "Agua 500ml",
-            "price": 5,
-            "image": "https://i.ibb.co/jfFdFQ9/water-3.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 9,
-            "name": "Agua 750ml",
-            "price": 7,
-            "image": "https://i.ibb.co/jfFdFQ9/water-3.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 10,
-            "name": "Bebida/gaseosa 500ml",
-            "price": 7,
-            "image": "https://i.ibb.co/Gs0Jm05/soda.png",
-            "type": "Comida",
-            "dataEntry": ""
-        },
-        {
-            "id": 11,
-            "name": "Bebida/gaseosa 750ml",
-            "price": 10,
-            "image": "https://i.ibb.co/Gs0Jm05/soda.png",
-            "type": "Comida",
-            "dataEntry": ""
-        }
-    ],
-    "orders":[]
+  "products": [
+    {
+      "id": 0,
+      "name": "Café americano",
+      "price": 5,
+      "image": "https://i.ibb.co/FYHYGqp/Cafecito.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "id": 1,
+      "name": "Café con leche",
+      "price": 7,
+      "image": "https://i.ibb.co/ynwN49M/hot-drink-1-1.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "id": 2,
+      "name": "Sandwich de jamón y queso",
+      "price": 10,
+      "image": "https://i.ibb.co/ZfbZ38r/Sangu-ichito.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "id": 3,
+      "name": "Jugo de frutas natural",
+      "price": 7,
+      "image": "https://i.ibb.co/7y7QwNp/Juguito.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "id": 4,
+      "name": "Hamburguesa simple",
+      "price": 10,
+      "image": "https://i.ibb.co/bg1b5t2/hamburger-3.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 5,
+      "name": "Hamburguesa doble",
+      "price": 15,
+      "image": "https://i.ibb.co/MpHL6F7/hamburger-4.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 6,
+      "name": "Papas fritas",
+      "price": 5,
+      "image": "https://i.ibb.co/bdrp7gx/french-fries.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 7,
+      "name": "Aros de cebolla",
+      "price": 5,
+      "image": "https://i.ibb.co/qrnZdKB/image-1.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 8,
+      "name": "Agua 500ml",
+      "price": 5,
+      "image": "https://i.ibb.co/jfFdFQ9/water-3.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 9,
+      "name": "Agua 750ml",
+      "price": 7,
+      "image": "https://i.ibb.co/jfFdFQ9/water-3.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 10,
+      "name": "Bebida/gaseosa 500ml",
+      "price": 7,
+      "image": "https://i.ibb.co/Gs0Jm05/soda.png",
+      "type": "Comida",
+      "dataEntry": ""
+    },
+    {
+      "id": 11,
+      "name": "Bebida/gaseosa 750ml",
+      "price": 10,
+      "image": "https://i.ibb.co/Gs0Jm05/soda.png",
+      "type": "Comida",
+      "dataEntry": ""
+    }
+  ],
+  "orders": [
+    
+  ]
 }

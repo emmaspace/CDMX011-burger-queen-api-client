@@ -11,14 +11,14 @@ const CrudProvider = ({ children }) => {
   let api = helpHTTP();
   let orders = "http://localhost:5000/orders";
 
-  useEffect(() => {
+  /*useEffect(() => {
     setLoading(true);
     helpHTTP()
       .get(orders)
       .then((res) => {
         if (!res.err) {
           setDb(res);
-          // console.log(db);
+          console.log(db);
           setError(null);
         } else {
           setDb(null);
@@ -26,7 +26,7 @@ const CrudProvider = ({ children }) => {
         }
         setLoading(false);
       });
-  }, [orders]);
+  }, [orders]); */
 
   const createData = (order) => {
     order.dateEntry = Date.now();

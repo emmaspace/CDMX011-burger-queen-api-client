@@ -25,10 +25,9 @@ describe("Labels should render", () => {
     expect(screen.getByLabelText('Contraseña')).toBeInTheDocument();
   })
 })
-// Checar cobertura
 
 describe("Input should be rendered", () => {
-  render(<LoginForm />); // porque falla si esta dentro del test?
+  render(<LoginForm />); 
   test('calls onClick prop when clicked', () => {
     render(<button onClick={saveData}>Acceder</button>)
     fireEvent.click(screen.getByText(/Acceder/i))

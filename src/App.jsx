@@ -5,7 +5,7 @@ import Header from "./components/Dashboard/Header/Header";
 import Comanda from "./components/Dashboard/Comanda/Comanda";
 import Orders from "./components/Dashboard/Orders";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { CrudProvider } from "./CRUD/CrudContext.js";
+import { CrudProvider } from "./CRUD/CrudContext"
 
 function App() {
   return (

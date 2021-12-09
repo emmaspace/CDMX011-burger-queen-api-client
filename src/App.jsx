@@ -4,10 +4,13 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Header from "./components/Dashboard/Header/Header";
 import Comanda from "./components/Dashboard/Comanda/Comanda";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { CrudProvider } from "./CRUD/CrudContext"
 
 function App() {
   return (
     <div className="App">
+
+      <CrudProvider>
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />} />
@@ -16,6 +19,8 @@ function App() {
           <Route exact path="/comanda" element={<Comanda />} />
         </Routes>
       </Router>
+      </CrudProvider>
+
     </div>
   ); 
 }

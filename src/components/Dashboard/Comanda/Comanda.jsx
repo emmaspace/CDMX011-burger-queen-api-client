@@ -101,7 +101,6 @@ export default function Comanda({
       <button onClick={submitOrder} className="submitBtn">
         Enviar
       </button>
-      <button className="submitBtn">Cancelar</button>
     </div>
   );
 }

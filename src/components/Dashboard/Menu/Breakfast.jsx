@@ -5,8 +5,8 @@ import "../Styles/Menu.scss";
 export default function Breakfast({ addProduct }) {
   let [products, setProducts] = useState();
   const getData = async () => {
-    const url =
-      "https://my-json-server.typicode.com/emmaspace/CDMX011-burger-queen-api-client/products";
+    const url = "http://localhost:5000/products";
+      //"https://my-json-server.typicode.com/emmaspace/CDMX011-burger-queen-api-client/products";
     let fetchData = await fetch(url).then((res) => res.json());
     fetchData = fetchData.filter((product) => product.type === "Desayuno");
     setProducts(fetchData);

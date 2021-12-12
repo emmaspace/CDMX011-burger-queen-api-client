@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     gap: 10%;
+    margin-top: 1.5em;
 }
 
 .product__cardBtn {
@@ -17,5 +18,36 @@
 }
 
 .product__price{
+    alignment-baseline: central;
+    margin: 0 0.5em;
+}
 
+.siUsaraSassNoHariaEsto{
+    font-family: Ropa Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 32px;
+    padding: 0 0.5em;
+  }
+
+.calculusBtn{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 25px;
+    color: white;
+    margin: 0.5em 0em;
+    background: #5D5FEF;
+    border: none;
+}
+
+.soso{
+    display: flex;
+    width:100%;
+    justify-content:space-between;
+    align-items: baseline;
+}
+
+.qtyBtns{
+    
 }

@@ -6,7 +6,6 @@ const CrudContext = createContext();
 const CrudProvider = ({ children }) => {
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
 
   let api = helpHTTP();
   let orders = "http://localhost:5000/orders";
@@ -70,7 +69,6 @@ const CrudProvider = ({ children }) => {
   const data = {
     db,
     error,
-    loading,
     createData,
     updateData,
     deleteData,

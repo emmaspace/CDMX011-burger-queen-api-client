@@ -1,27 +1,31 @@
+import { helpHTTP } from "../../helpers/helpHTTP";
 import React, { useEffect, useState } from "react";
+import OrderItem from "./OrderItem";
 
-import {helpHTTP} from "../../helpers/helpHTTP"
+export default function Orders(addOrders) {
+  let [orders, setOrders] = useState();
 
- export default function Orders ( addOrders ) {
-    let [order, setOrder] = useState();
+  const api = helpHTTP();
 
-      let orders = "http://localhost:5000/orders";
+  const url = "http://localhost:5000/orders";
 
-      useEffect(() => {
-        helpHTTP()
-          .get(orders)
-          .then((res) => {
-            if (!res.err) {
-              setOrder(res);
-            } else {
-              setOrder(null);
-            }
-          });
-      }, [orders]);
+  useEffect(() => {
+    const endpoint = `${url}`;
+    api.get(endpoint).then((res) => {
+      if (!res.err) {
+        setOrders(res);
+      } else {
+        setOrders(res.err);
+      }
+    });
+  }, []);
 
-    return (
-      <div className="orders">
-            <p>Estos son los pedidos</p>
-      </div>
-    );
-} 
+  return (
+    <div className="orders">
+      <p>Estos son los pedidos</p>
+      {orders && orders.map((order) => (
+        <OrderItem key={order.id} order={order} />
+      ))}
+    </div>
+  );
+}

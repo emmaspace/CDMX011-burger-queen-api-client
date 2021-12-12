@@ -1,13 +1,10 @@
-import "../Styles/Header.scss";
-import { signOut, getAuth } from "firebase/auth";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import React  , { useState }  from "react";
-// import Dashboard from "./Dashboard";
+import { signOut, getAuth } from "firebase/auth";
+
+import "../Styles/Header.scss";
 
 export default function Header({ setMenu, setShowOrders }) {
-  /* const renderBreakfast = () => {
-   return  setBreakfast === 'breakfast' ? 'lunch' : 'breakfast';
-  } */
 
   const navigate = useNavigate();
   const auth = getAuth();

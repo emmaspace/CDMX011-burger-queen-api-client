@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { helpHTTP } from "../helpers/helpHTTP";
 
 const CrudContext = createContext();
@@ -10,23 +10,6 @@ const CrudProvider = ({ children }) => {
 
   let api = helpHTTP();
   let orders = "http://localhost:5000/orders";
-
-  /*useEffect(() => {
-    setLoading(true);
-    helpHTTP()
-      .get(orders)
-      .then((res) => {
-        if (!res.err) {
-          setDb(res);
-          console.log(db);
-          setError(null);
-        } else {
-          setDb(null);
-          setError(res);
-        }                                                                     
-        setLoading(false);
-      });
-  }, [orders]); */
 
   const createData = (order) => {
     order.dateEntry = Date.now();
@@ -89,8 +72,6 @@ const CrudProvider = ({ children }) => {
     error,
     loading,
     createData,
-    //dataToEdit,
-    // setDataToEdit,
     updateData,
     deleteData,
   };

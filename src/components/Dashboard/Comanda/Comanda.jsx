@@ -1,13 +1,9 @@
-import "../Styles/Comanda.scss";
-// import Breakfast from "./Breakfast";
-// import Lunch from "./Lunch";
-import ComandaItem from "./ComandaItem";
-
 import React, { useContext, useState } from "react";
 
+import ComandaItem from "./ComandaItem";
 import CrudContext from "../../../CRUD/CrudContext";
-// import { useContext } from "react";
-// import Header from "./Header";
+
+import "../Styles/Comanda.scss";
 
 export default function Comanda({
   orderProduct,
@@ -25,7 +21,6 @@ export default function Comanda({
     (x, item) => x + item.price * item.amount,
     0
   );
-  // console.log(grossPrice);
 
   const taxPrice = grossPrice * 0.16;
 
@@ -43,7 +38,6 @@ export default function Comanda({
 
   const submitOrder = (e) => {
     e.preventDefault();
-    // console.log(order);
     if (!order.client || !order.orderProduct) {
       return alert(
         "Por favor escribe el nombre del cliente o agrega productos a la órden"

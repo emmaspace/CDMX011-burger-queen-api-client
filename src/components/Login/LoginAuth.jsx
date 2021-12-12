@@ -1,10 +1,11 @@
-import React, { useState,  Fragment } from "react";
-import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase";
-import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import React, { useState,  Fragment } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 import { LoginForm } from "./LoginForm";
-//comment
+
+import "./Login.css";
 
 export function AuthFirebase(email, password) {
   const history = useNavigate();

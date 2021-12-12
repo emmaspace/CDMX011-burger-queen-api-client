@@ -2,8 +2,6 @@ export const helpHTTP = () => {
   const customFetch = (endpoint, options) => {
     const defaultHeader = {
       accept: "application/json",
-      mode: "no-cors",
-      // Access-Control-Allow-Origin : *
     };
     const controller = new AbortController();
     options.signal = controller.signal;
@@ -15,7 +13,6 @@ export const helpHTTP = () => {
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
 
-    //console.log(options);
     setTimeout(() => controller.abort(), 5000);
 
     return fetch(endpoint, options)

@@ -1,12 +1,12 @@
-import "./Styles/Dashboard.scss";
-import Breakfast from "./Menu/Breakfast";
-import Lunch from "./Menu/Lunch";
-import Comanda from "./Comanda/Comanda";
 import React, { useState, Fragment } from "react";
-import Header from "./Header/Header";
-import Item from "./Menu/Item/Item";
+
 import Orders from "./Orders";
-//import "../../style.scss";
+import Lunch from "./Menu/Lunch";
+import Header from "./Header/Header";
+import Comanda from "./Comanda/Comanda";
+import Breakfast from "./Menu/Breakfast";
+
+import "./Styles/Dashboard.scss";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState("breakfast");
@@ -45,7 +45,6 @@ export default function Dashboard() {
   const substract = (product) => {
     console.log(product);
     const exists = orderProduct.find((elem) => elem.id === product.id);
-    // console.log(exists)
     if (exists.amount === 1) {
       deleteProduct(product);
     } else if (exists) {
@@ -79,16 +78,16 @@ export default function Dashboard() {
       </section>
       {showOrders ? null : (
         <Fragment>
-          <section /* htmlId="Breakfast" */>
+          <section>
             {menu === "breakfast" ? (
               <Breakfast addProduct={addProduct} />
             ) : null}
           </section>
 
-          <section /* htmlId="Lunch" */>
+          <section>
             {menu === "lunch" ? <Lunch addProduct={addProduct} /> : null}
           </section>
-          <section className="comanda__section" /* htmlId="Comanda" */>
+          <section className="comanda__section">
             <Comanda
               client={client}
               setClient={setClient}

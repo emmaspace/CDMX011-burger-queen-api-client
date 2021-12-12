@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import Item from "./Item/Item";
+
 import "../Styles/Menu.scss";
 
 export default function Breakfast({ addProduct }) {

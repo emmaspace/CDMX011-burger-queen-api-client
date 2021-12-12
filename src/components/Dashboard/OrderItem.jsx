@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
 export default function OrderItem({ order, addOrder }) {
-    console.log(order)
   return (
     <div className="product__container" onClick={() => addOrder(order)}>
       {OrderItem&& (

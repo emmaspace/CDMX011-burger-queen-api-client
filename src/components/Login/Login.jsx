@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
-//import { LoginForm } from "./LoginForm";
 import { AuthFirebase } from "./LoginAuth";
 import "./Login.css";
-/*s*/
 
 function Login() {
   return (

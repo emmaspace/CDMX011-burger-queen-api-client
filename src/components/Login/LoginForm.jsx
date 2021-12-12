@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Login.css";
-//comment
 
 export function LoginForm({saveData}) {
 

@@ -4,6 +4,10 @@
   display: inline-block;
   box-sizing: border-box;
   width: 16vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 16.5em;
 
   img {
     max-width: 5em;

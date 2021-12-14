@@ -1,0 +1,32 @@
+.order__container{
+    // padding: 1em 2em;
+    border: 5px solid #fa7d09;
+    border-radius: 3em;
+    width: 13em;
+    height: 18em;
+    font-family: Ropa Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.order__info{
+    margin: 1.3em;
+    text-align: -webkit-right;
+    max-width: -webkit-fill-available;
+    overflow: scroll;
+}
+
+.two__cols__name{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.two__cols {
+    display: flex;
+    justify-content: space-evenly;
+}

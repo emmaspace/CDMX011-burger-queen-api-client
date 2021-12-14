@@ -1,6 +1,7 @@
 import { helpHTTP } from "../../helpers/helpHTTP";
 import React, { useEffect, useState } from "react";
 import OrderItem from "./OrderItem";
+import  "./Styles/OrderItem.scss";
 
 export default function Orders(addOrders) {
   let [orders, setOrders] = useState();
@@ -22,7 +23,6 @@ export default function Orders(addOrders) {
 
   return (
     <div className="orders">
-      <p>Estos son los pedidos</p>
       {orders && orders.map((order) => (
         <OrderItem key={order.id} order={order} />
       ))}

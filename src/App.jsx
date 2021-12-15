@@ -1,7 +1,7 @@
 import "./App.css";
 import Login from "./components/Login/Login";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Header from "./components/Dashboard/Header/Header";
+import Kitchen from "./components/Kitchen/Kitchen";
 import Comanda from "./components/Dashboard/Comanda/Comanda";
 import Orders from "./components/Dashboard/Orders";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Login />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
-            <Route exact path="/header" element={<Header />} />
+            <Route exact path="/kitchen" element={<Kitchen />} />
             <Route exact path="/comanda" element={<Comanda />} />
             <Route exact path="/orders" element={<Orders />} />
           </Routes>

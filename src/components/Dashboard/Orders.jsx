@@ -17,7 +17,7 @@ export default function Orders(addOrders) {
         setOrders(res);
       } else {
         setOrders(res.err);
-      }
+      
     });
   }, []);
 

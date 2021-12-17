@@ -3,20 +3,20 @@ import React, { useState, Fragment } from "react";
 import "./Styles/Orders.scss";
 import "./Styles/Item.scss";
 
-export default function OrderItem({ order, cuisine }) {
+export default function OrderItem({ order, cuisine, updateData }) {
 
   const orderStatus = order.status;
   const [initialStatus, setInitialStatus] = useState(orderStatus);
 
-  const changeStatus = () => {
+   const changeStatus = () => {
     const ready = confirm("¿Está lista la órden?");
-    if(ready === true/* order.status === "pending" */) {
-      setInitialStatus("Finalizado")/* confirm("¿Está lista la órden?") */
-      console.log(initialStatus)
+    if(ready === true) {
+      console.log(order.id)
+      updateData(order)
     } else {
       console.log("a ver")
     }
-  }
+  } 
 
   return (
     <div className="order__container">
@@ -46,23 +46,35 @@ export default function OrderItem({ order, cuisine }) {
         </Fragment>
       )}
       <section className="product__info">
-        {order.status === "pending" ? (
+
+{/*        <button
+          type="button"
+          className="order-ready-btn"
+          onClick={() => {
+            changeStatus(order);
+          }}
+        >Holi
+          </button> */}
+         {/* {order.status === "pending" ? "Pendiente" : "Listo" } */}
+          {order.status === "pending" ? (
           <button
             onClick={() => {
               changeStatus(order);
+              console.log("primera opcion")
             }}
-          >
+            >
             <h2>Pendiente</h2>
           </button>
         ) : (
           <button
-            onClick={() => {
-              changeStatus(order);
+          onClick={() => {
+            changeStatus(order);
+            console.log("segunda opcion")
             }}
           >
             <h2>Yastambres</h2>
-          </button>
-        )}
+       
+          </button> )}
       </section>
     </div>
   );

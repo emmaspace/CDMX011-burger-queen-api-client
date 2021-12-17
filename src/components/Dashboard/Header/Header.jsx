@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { signOut, getAuth } from "firebase/auth";
 
 import "../Styles/Header.scss";
@@ -20,7 +20,18 @@ export default function Header({ setMenu, setShowOrders }) {
 
   const goToOrders = () => {
     navigate("/orders");
+    navigate("/kitchen");
   }
+
+  function showOnlyKitchen () {
+    if(window.location.pathname === "kitchen"){
+      document.querySelectorAll(".kitchenOnly")
+    } else(
+      console.log('ps no esperancita')
+    )
+  }
+
+  showOnlyKitchen();
 
   return (
     <div className="header__dashboard" LogOut={LogOut}>
@@ -43,8 +54,8 @@ export default function Header({ setMenu, setShowOrders }) {
         >
           Resto del día
         </button>
-        <button className="bfBtn"onClick={() => setShowOrders(true)}>Pedidos</button>
-        <button aria-label="Salir" className="bfBtn" onClick={LogOut}>
+        <button className="bfBtn kitchenOnly" onClick={() => setShowOrders(true)}>Pedidos</button>
+        <button aria-label="Salir" className="bfBtn kitchenOnly" onClick={LogOut}>
           <img
             src="https://i.ibb.co/60pzZmb/fluent-door-arrow-right-20-filled.png"
             alt="Ícono de puerta"

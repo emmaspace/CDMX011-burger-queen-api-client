@@ -45,10 +45,16 @@ export const helpHTTP = () => {
     return customFetch(url, options);
   };
 
+  const patch = (url, options = {}) => {
+    options.method = "PATCH";
+    return customFetch(url, options);
+  }
+
   return {
     get,
     post,
     put,
     delit,
+    patch
   };
 };

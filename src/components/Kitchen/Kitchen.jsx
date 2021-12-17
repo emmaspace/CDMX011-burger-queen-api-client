@@ -46,7 +46,7 @@ export default function Kitchen() {
 
   return (
     <div className="orders">
-      <p>Kp2</p>
+      <Header/>
       {cuisine &&
         cuisine.map((order) => (
             <KitchenItem order={order} key={order.id} updateData={updateData}/>

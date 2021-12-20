@@ -5,11 +5,34 @@ import "./Styles/OrderItem.scss";
 
 export default function Orders(addOrders) {
   let [orders, setOrders] = useState();
+  //const [time, setTime] = new Date ()
 
   const api = helpHTTP();
 
   const url = "http://localhost:5000/orders";
 
+   const temporizador = (order) => {
+    const inicio = order.timeEntry
+     const final = new Date();
+     const duration = final - inicio;
+
+     console.log(msToTime(duration));
+  }
+
+  function msToTime(duration) {
+    var milliseconds = parseInt((duration % 1000) / 100),
+      seconds = Math.floor((duration / 1000) % 60),
+      minutes = Math.floor((duration / (1000 * 60)) % 60),
+      hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+  
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+  
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+  }
+  console.log(msToTime(300000))
+  
   useEffect(() => {
     const endpoint = `${url}`;
     api.get(endpoint).then((res) => {
@@ -46,7 +69,7 @@ export default function Orders(addOrders) {
     <div className="orders">
       {orders &&
         orders.map((order) => (
-          <OrderItem key={order.id} order={order} updateData={updateData} />
+          <OrderItem key={order.id} order={order} updateData={updateData} temporizador={temporizador}/>
         ))}
     </div>
   );

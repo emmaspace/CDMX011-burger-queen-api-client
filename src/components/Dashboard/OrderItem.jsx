@@ -3,13 +3,14 @@ import React, { useState, Fragment } from "react";
 import "./Styles/Orders.scss";
 import "./Styles/Item.scss";
 
-export default function OrderItem({ order, cuisine, updateData }) {
+export default function OrderItem({ order, cuisine, updateData, temporizador }) {
 
   const orderStatus = order.status;
   const [initialStatus, setInitialStatus] = useState(orderStatus);
 
    const changeStatus = () => {
-    const ready = confirm("¿Está lista la órden?");
+     const ready = confirm("¿Está lista la órden?");
+      temporizador(order);
     if(ready === true) {
       console.log(order.id)
       updateData(order)
@@ -47,16 +48,16 @@ export default function OrderItem({ order, cuisine, updateData }) {
       )}
       <section className="product__info">
 
-{/*        <button
+       <button
           type="button"
           className="order-ready-btn"
           onClick={() => {
             changeStatus(order);
           }}
-        >Holi
-          </button> */}
-         {/* {order.status === "pending" ? "Pendiente" : "Listo" } */}
-          {order.status === "pending" ? (
+        >
+         {order.status === "pending" ? "Pendiente" : "Listo" } 
+          </button> 
+          {/* {order.status === "pending" ? (
           <button
             onClick={() => {
               changeStatus(order);
@@ -74,7 +75,7 @@ export default function OrderItem({ order, cuisine, updateData }) {
           >
             <h2>Yastambres</h2>
        
-          </button> )}
+          </button> )} */}
       </section>
     </div>
   );

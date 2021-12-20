@@ -18,7 +18,7 @@ export default function Orders(addOrders) {
       } else {
         setOrders(res.err);
       }
-    });
+    })
   }, []);
 
   const updateData = (order) => {

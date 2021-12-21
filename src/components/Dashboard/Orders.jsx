@@ -7,14 +7,15 @@ export default function Orders(addOrders) {
   let [orders, setOrders] = useState();
   //const [time, setTime] = new Date ()
 
+
   const api = helpHTTP();
 
   const url = "http://localhost:5000/orders";
 
    const temporizador = (order) => {
-    const inicio = order.timeEntry
+    const inicio = new Date(order.dateEntry)
      const final = new Date();
-     const duration = final - inicio;
+     const duration = final.getTime() - inicio.getTime();
 
      console.log(msToTime(duration));
   }
@@ -31,7 +32,7 @@ export default function Orders(addOrders) {
   
     return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
   }
-  console.log(msToTime(300000))
+  // console.log(msToTime(300000))
   
   useEffect(() => {
     const endpoint = `${url}`;

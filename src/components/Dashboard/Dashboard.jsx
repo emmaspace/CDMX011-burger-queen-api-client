@@ -14,6 +14,8 @@ export default function Dashboard() {
   const [client, setClient] = useState("");
   const [showOrders, setShowOrders] = useState(false);
 
+
+
   const addProduct = (product) => {
     const exists = orderProduct.find((elem) => elem.id === product.id);
     if (exists) {
@@ -69,11 +71,9 @@ export default function Dashboard() {
       setOrderProduct(orderProduct.filter((elem) => elem.id !== product.id));
     }
   };
-
   return (
     <div className="dashboard">
       <section htmlID="Header">
-        {" "}
         <Header setMenu={setMenu} setShowOrders={setShowOrders} />
       </section>
       {showOrders ? null : (

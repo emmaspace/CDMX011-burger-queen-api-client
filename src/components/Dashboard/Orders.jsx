@@ -32,7 +32,6 @@ export default function Orders(addOrders) {
   
     return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
   }
-  // console.log(msToTime(300000))
   
   useEffect(() => {
     const endpoint = `${url}`;

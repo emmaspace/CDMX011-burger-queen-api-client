@@ -5,12 +5,14 @@ import Kitchen from "./components/Kitchen/Kitchen";
 import Comanda from "./components/Dashboard/Comanda/Comanda";
 import Orders from "./components/Dashboard/Orders";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { CrudProvider } from "./CRUD/CrudContext"
+import { CrudProvider } from "./CRUD/CrudContext";
+import AuthDataProvider from "./GetUser"
 
 function App() {
   return (
     <div className="App">
       <CrudProvider>
+        <AuthDataProvider>
         <Router>
           <Routes>
             <Route exact path="/" element={<Login />} />
@@ -20,6 +22,7 @@ function App() {
             <Route exact path="/orders" element={<Orders />} />
           </Routes>
         </Router>
+        </AuthDataProvider>
       </CrudProvider>
     </div>
   );

@@ -7,30 +7,25 @@ import { signOut, getAuth } from "firebase/auth";
 
 import "../Styles/Header.scss";
 
-export const LogOut = () => {
-  const navigate = useNavigate();
+export const LogOut = async () => {
   const auth = getAuth();
- signOut(auth)
-   .then(() => {
-     navigate("/");
-     return true
-   })
-   .catch((error) => {
-     return error;
-   });
+  try {
+    await signOut(auth)
+    console.log("Sali /o/")
+    return true
+  } catch {
+    console.log("Te quedarás aquí por siemmpre >:D")
+    return false;
+  }
 }; 
 export default function Header({ setMenu, setShowOrders }) {
   const navigate = useNavigate();
   const { user } = useAuthDataContext();
-
+  
   if (!user) {
     navigate("/");
-  }
-
-  const goToOrders = () => {
-    navigate("/orders");
-    navigate("/kitchen");
-  };
+    console.log(user);
+  } 
 
   function showOnlyKitchen() {
     if (window.location.pathname === "kitchen") {
@@ -48,9 +43,6 @@ export default function Header({ setMenu, setShowOrders }) {
           src="https://i.ibb.co/XX4TXNw/Logo.png["
           alt="Logo de Burger Queen"
         />
-        {
-          (user) ? (<p> Holi {user.email} </p>) : null
-        }
         <button
           type="button"
           className="bfBtn"
@@ -58,7 +50,7 @@ export default function Header({ setMenu, setShowOrders }) {
             setMenu("breakfast");
             setShowOrders(false);
           }}
-        >
+          >
           Desayunos
         </button>
         <button
@@ -68,8 +60,11 @@ export default function Header({ setMenu, setShowOrders }) {
             setMenu("lunch");
             setShowOrders(false);
           }}
-        >
+          >
           Resto del día
+        {
+          (user) ? (<p> Holi {user} </p>) : null
+        }
         </button>
         <button
           className="bfBtn kitchenOnly"
@@ -80,7 +75,7 @@ export default function Header({ setMenu, setShowOrders }) {
         <button
           aria-label="Salir"
           className="bfBtn kitchenOnly"
-          onClick={LogOut}
+          onClick={()=> LogOut ? navigate("/") : null}
         >
           <img
             src="https://i.ibb.co/60pzZmb/fluent-door-arrow-right-20-filled.png"

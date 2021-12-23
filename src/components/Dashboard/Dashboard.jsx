@@ -5,6 +5,7 @@ import Lunch from "./Menu/Lunch";
 import Header from "./Header/Header";
 import Comanda from "./Comanda/Comanda";
 import Breakfast from "./Menu/Breakfast";
+import { useAuthDataContext } from "../../GetUser";
 
 import "./Styles/Dashboard.scss";
 
@@ -71,11 +72,15 @@ export default function Dashboard() {
       setOrderProduct(orderProduct.filter((elem) => elem.id !== product.id));
     }
   };
+
+const { email } = useAuthDataContext();
+  console.log(email)
   return (
     <div className="dashboard">
       <section htmlID="Header">
         <Header setMenu={setMenu} setShowOrders={setShowOrders} />
       </section>
+      <p>Holi {email} </p>
       {showOrders ? null : (
         <Fragment>
           <section>

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 
-export function LoginForm({saveData}) {
-
+export function LoginForm({saveData, setError}) {
+  const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -36,6 +38,8 @@ export function LoginForm({saveData}) {
           onClick={(e) => {
             e.preventDefault();
             saveData(email, password)
+              ? history("dashboard")
+              : setError("Contraseña y/o correo inválidos");
           }}
         >
           Acceder

@@ -22,11 +22,11 @@ const AuthDataProvider = props => {
       onAuthStateChanged(auth, (fbUser) => {
         if (fbUser) {
           setUser(fbUser)
-        } else {
-          console.log("No hay usuario miciela")
+        } else  {
+          setUser(null)
         }
       })
-    }, []);
+    }, [signIn, LogOut]);
   
     const authDataValue = useMemo (() => ({ ...user, signIn, LogOut  }), [user]);
     return <AuthDataContext.Provider value={authDataValue} {...props} />;

@@ -1,31 +1,34 @@
 import "./App.css";
-import Login from "./components/Login/Login";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Kitchen from "./components/Kitchen/Kitchen";
-import Comanda from "./components/Dashboard/Comanda/Comanda";
-import Orders from "./components/Dashboard/Orders";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { CrudProvider } from "./CRUD/CrudContext";
-import AuthDataProvider from "./GetUser"
+import AuthDataProvider from "./GetUser";
+import Routerito from "./router";
+import { useState } from "react";
+import { onAuthStateChanged } from 'firebase/auth';
+import auth from "./firebase";
 
-function App() {
-  return (
-    <div className="App">
+
+function App () {
+
+  const [userInfo, setUserInfo ] = useState(null)
+
+  onAuthStateChanged(auth, (user) => {
+    if(!user) {
+      setUserInfo(null)
+    }
+  })
+
+  return(
+  <div className="App">
+  <BrowserRouter>
+    <AuthDataProvider>
       <CrudProvider>
-        <AuthDataProvider>
-        <Router>
-          <Routes>
-            <Route exact path="/" element={<Login />} />
-            <Route exact path="/dashboard" element={<Dashboard />} />
-            <Route exact path="/kitchen" element={<Kitchen />} />
-            <Route exact path="/comanda" element={<Comanda />} />
-            <Route exact path="/orders" element={<Orders />} />
-          </Routes>
-        </Router>
-        </AuthDataProvider>
+            <Routerito userInfo={userInfo} setUserInfo={setUserInfo}/>
       </CrudProvider>
-    </div>
-  );
-}
+    </AuthDataProvider>
+  </BrowserRouter>
+  </div>  
+    )
+  }
 
 export default App;

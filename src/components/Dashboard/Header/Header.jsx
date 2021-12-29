@@ -19,13 +19,13 @@ export const LogOut = async () => {
   }
 }; 
 export default function Header({ setMenu, setShowOrders }) {
-  const navigate = useNavigate();
-  const { user } = useAuthDataContext();
+   const navigate = useNavigate();
+ // const { user } = useAuthDataContext();
   
-  if (!user) {
+/*   if (!user) {
     navigate("/");
     console.log(user);
-  } 
+  }   */
 
   function showOnlyKitchen() {
     if (window.location.pathname === "kitchen") {
@@ -62,9 +62,9 @@ export default function Header({ setMenu, setShowOrders }) {
           }}
           >
           Resto del día
-        {
+{/*         {
           (user) ? (<p> Holi {user} </p>) : null
-        }
+        } */}
         </button>
         <button
           className="bfBtn kitchenOnly"

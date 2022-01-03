@@ -2,7 +2,7 @@ import auth from "../../firebase";
 import React, { useState, Fragment } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { LoginForm } from "./LoginForm";
-import "./Login.css";
+import "./Login.scss";
 
 export const signIn = async (email, password) => {
   try {

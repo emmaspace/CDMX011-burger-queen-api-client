@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./Login.css";
+import "./Login.scss";
 
 export function LoginForm({saveData, setError}) {
   const history = useNavigate();

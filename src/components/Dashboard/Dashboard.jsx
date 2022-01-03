@@ -15,7 +15,10 @@ export default function Dashboard() {
   const [client, setClient] = useState("");
   const [showOrders, setShowOrders] = useState(false);
 
-
+  const resetData = () => {
+    setClient("");
+    setOrderProduct([]);
+  };
 
   const addProduct = (product) => {
     const exists = orderProduct.find((elem) => elem.id === product.id);
@@ -73,8 +76,8 @@ export default function Dashboard() {
     }
   };
 
-const { email } = useAuthDataContext();
-  console.log(email)
+  const { email } = useAuthDataContext();
+  console.log(email);
   return (
     <div className="dashboard">
       <section htmlID="Header">
@@ -101,12 +104,13 @@ const { email } = useAuthDataContext();
               deleteProduct={deleteProduct}
               substract={substract}
               addition={addition}
+              resetData={resetData}
             />
           </section>
         </Fragment>
       )}
 
-      <section>{ showOrders=== true ? <Orders /> : null}</section>
+      <section>{showOrders === true ? <Orders /> : null}</section>
     </div>
   );
 }

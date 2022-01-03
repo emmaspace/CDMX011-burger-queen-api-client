@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { AuthFirebase } from "./LoginAuth";
-import "./Login.css";
+import "./Login.scss";
 
 function Login() {
   return (

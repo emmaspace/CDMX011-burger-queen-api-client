@@ -13,6 +13,7 @@ export default function Comanda({
   addition,
   client,
   setClient,
+  resetData
 }) {
   const [today, setDate] = useState(new Date());
   const [time, setTime] = useState(new Date());
@@ -44,6 +45,7 @@ export default function Comanda({
       );
     } else {
       createData(order);
+      resetData("");
     }
   };
 

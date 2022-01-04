@@ -1,4 +1,13 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@bq.com",
+      "password": "$2a$10$uzUTRtIaW8c2EJKIKnOROO3gwNxY7rAThl.X47Ei2P4hyZ.wrXoAe",
+      "role": "admin"
+    }
+  ],
   "products": [
     {
       "id": 0,

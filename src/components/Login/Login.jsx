@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { AuthFirebase } from "./LoginAuth";
+import { AuthJSON } from "./LoginAuth";
 import "./Login.scss";
 
 function Login() {
@@ -89,7 +89,7 @@ function Login() {
           </svg>
           <h1>Burger Queen</h1>
         </aside>
-        <AuthFirebase></AuthFirebase>
+        <AuthJSON></AuthJSON>
       </main>
 
     </Fragment>

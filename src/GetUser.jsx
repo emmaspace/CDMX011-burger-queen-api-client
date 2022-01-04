@@ -17,8 +17,8 @@ const initialAuthData = {};
 const AuthDataProvider = props => {
     const [user, setUser] = useState(initialAuthData);
     
-    const auth = getAuth();
-    useEffect(() => { 
+    // const auth = getAuth();
+    /* useEffect(() => { 
       onAuthStateChanged(auth, (fbUser) => {
         if (fbUser) {
           setUser(fbUser)
@@ -26,9 +26,10 @@ const AuthDataProvider = props => {
           setUser(null)
         }
       })
-    }, [signIn, LogOut]);
-  
-    const authDataValue = useMemo (() => ({ ...user, signIn, LogOut  }), [user]);
+    }, [signIn, LogOut]); */
+    const onLogin = newAuthData => setUser(newAuthData);
+
+    const authDataValue = useMemo (() => ({ ...user, onLogin, LogOut  }), [user]);
     return <AuthDataContext.Provider value={authDataValue} {...props} />;
 };
 

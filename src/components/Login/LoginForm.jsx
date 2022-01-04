@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthDataContext } from "../../GetUser";
 
 import "./Login.scss";
 
-export function LoginForm({saveData, setError}) {
+export function LoginForm({ saveData, setError }) {
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { onLogin } = useAuthDataContext();
+
+  const handleSubmit = () => {
+    saveData(email, password)
+      .then((res) => {
+        console.log(res)
+        onLogin(res);
+        history("dashboard");
+      })
+      .catch(setError("Contraseña y/o correo inválidos"));
+  };
   return (
     <section className="login">
       <h2>Inicio</h2>
@@ -37,9 +49,7 @@ export function LoginForm({saveData, setError}) {
           className="login__btn"
           onClick={(e) => {
             e.preventDefault();
-            saveData(email, password)
-              ? history("dashboard")
-              : setError("Contraseña y/o correo inválidos");
+            handleSubmit(email, password);
           }}
         >
           Acceder

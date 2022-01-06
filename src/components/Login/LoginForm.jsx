@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthDataContext } from "../../GetUser";
+import Cookies from "universal-cookie/es6";
 
 import "./Login.scss";
 
@@ -15,7 +16,15 @@ export function LoginForm({ saveData, setError }) {
       .then((res) => {
         console.log(res)
         onLogin(res);
-        history("dashboard");
+        const cookies = new Cookies();
+
+
+        const admin = cookies.get("admin");
+
+        //if (waiter === true) history("/dashboard");
+        if (admin === true) history("/kitchen");
+        //if (kitchen === true) history("/kitchen");
+        //history("dashboard");
       })
       .catch(setError("Contraseña y/o correo inválidos"));
   };

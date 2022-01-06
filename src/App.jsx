@@ -8,22 +8,12 @@ import { onAuthStateChanged } from "firebase/auth";
 import auth from "./firebase";
 
 function App() {
-  const [userInfo, setUserInfo] = useState(null);
-
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      setUserInfo(null);
-    } else {
-      setUserInfo(user);
-    }
-  });
-
   return (
     <div className="App">
       <BrowserRouter>
         <AuthDataProvider>
           <CrudProvider>
-            <Routerito userInfo={userInfo} setUserInfo={setUserInfo} />
+            <Routerito />
           </CrudProvider>
         </AuthDataProvider>
       </BrowserRouter>

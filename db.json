@@ -4,22 +4,33 @@
       "id": 1,
       "name": "Admin",
       "email": "admin@bq.com",
-      "password": "$2a$10$uzUTRtIaW8c2EJKIKnOROO3gwNxY7rAThl.X47Ei2P4hyZ.wrXoAe",
+      "password": "123456",
       "role": {
-        "admin": true, 
+        "admin": true,
         "waiter": false,
         "kitchen": false
-        } 
-    }, 
+      }
+    },
     {
       "id": 2,
       "name": "Waiter",
       "email": "waiter@bq.com",
-      "password": "$2a$10$uzUTRtIaW8c2EJKIKnOROO3gwNxY7rAThl.X47Ei2P4hyZ.wrXoAe",
+      "password": "123456",
       "role": {
-          "admin": true, 
-          "waiter": false,
-          "kitchen": false
+        "admin": false,
+        "waiter": true,
+        "kitchen": false
+      }
+    },
+    {
+      "email": "kitchen@bq.com",
+      "name": "Cocinero",
+      "password": "123456",
+      "id": 4,
+      "role": {
+        "admin": false,
+        "waiter": false,
+        "kitchen": true
       }
     }
   ],

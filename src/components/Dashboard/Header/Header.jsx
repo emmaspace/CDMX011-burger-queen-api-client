@@ -1,43 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuthDataContext } from "../../../GetUser";
-import { signOut, getAuth } from "firebase/auth";
-// import Swal from "sweetalert2";
-// import GetUser from "../../../GetUser";
+import { LogOut } from "../../Login/LoginAuth";
 
 import "../Styles/Header.scss";
 
-export const LogOut = async () => {
-  const auth = getAuth();
-  try {
-    await signOut(auth)
-    console.log("Sali /o/")
-    return true
-  } catch {
-    console.log("Te quedarás aquí por siemmpre >:D")
-    return false;
-  }
-}; 
+
 export default function Header({ setMenu, setShowOrders }) {
-   const navigate = useNavigate();
- // const { user } = useAuthDataContext();
-  
-/*   if (!user) {
-    navigate("/");
-    console.log(user);
-  }   */
 
   function showOnlyKitchen() {
     if (window.location.pathname === "kitchen") {
       document.querySelectorAll(".kitchenOnly");
     } else console.log("ps no esperancita");
   }
-  //Swal.fire( 'Bienvenida  ' + GetUser().email )
 
   showOnlyKitchen();
 
   return (
-    <div className="header__dashboard" LogOut={LogOut}>
+    <div className="header__dashboard">
       <nav className="header__settings">
         <img
           src="https://i.ibb.co/XX4TXNw/Logo.png["
@@ -75,7 +53,7 @@ export default function Header({ setMenu, setShowOrders }) {
         <button
           aria-label="Salir"
           className="bfBtn kitchenOnly"
-          onClick={()=> LogOut ? navigate("/") : null}
+          onClick={()=> LogOut()}
         >
           <img
             src="https://i.ibb.co/60pzZmb/fluent-door-arrow-right-20-filled.png"

@@ -14,7 +14,7 @@ export function LoginForm({ saveData, setError }) {
   const handleSubmit = () => {
     saveData(email, password)
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         onLogin(res);
         const cookies = new Cookies();
 

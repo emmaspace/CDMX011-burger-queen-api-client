@@ -8,6 +8,7 @@ import Breakfast from "./Menu/Breakfast";
 import { useAuthDataContext } from "../../GetUser";
 
 import "./Styles/Dashboard.scss";
+import Cookies from "universal-cookie/es6";
 
 export default function Dashboard() {
   const [menu, setMenu] = useState("breakfast");
@@ -75,8 +76,8 @@ export default function Dashboard() {
       setOrderProduct(orderProduct.filter((elem) => elem.id !== product.id));
     }
   };
-
-  const { email } = useAuthDataContext();
+const cookies = new Cookies()
+  const  email  = cookies.get("email")
   console.log(email);
   return (
     <div className="dashboard">
